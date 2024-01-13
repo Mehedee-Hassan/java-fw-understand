@@ -67,3 +67,21 @@
 ```
 
 ## proxy interface
+
+
+```
+InvocationHandler handler = new InvocationHandler() {
+    @Override
+    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+        // Your code to handle method calls
+    }
+};
+```
+
+```
+MyInterface proxyInstance = (MyInterface) Proxy.newProxyInstance(
+    MyInterface.class.getClassLoader(),
+    new Class<?>[] { MyInterface.class },
+    handler
+);
+```
